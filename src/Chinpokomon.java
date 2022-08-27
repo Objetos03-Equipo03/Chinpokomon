@@ -24,7 +24,7 @@ public abstract class Chinpokomon implements IChinpokomon{
         System.out.printf(this.getNombre()+" le queda " + this.getVida() +" de vida.\n");
     }
 
-    public void pelearContra(IChinpokomon chinpokomon) {
+    public void pelearContra(Chinpokomon chinpokomon) {
         for (int i = 0; i < this.ataques.size(); i++) {
 
             this.ataques.get(i).dañar(chinpokomon);
