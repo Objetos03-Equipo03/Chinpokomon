@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GimnasioChimpokomon {
-    static void peleaChinpokomonDe_Con_(Chimpokomon chinpokomonA, Chimpokomon chinpokomonB){
+    public static void peleaChinpokomonDe_Con_(Chimpokomon chinpokomonA, Chimpokomon chinpokomonB){
         while(!chinpokomonA.estaDerrotado() && !chinpokomonB.estaDerrotado()){
             chinpokomonA.pelearContra(chinpokomonB);
             chinpokomonB.pelearContra(chinpokomonA);

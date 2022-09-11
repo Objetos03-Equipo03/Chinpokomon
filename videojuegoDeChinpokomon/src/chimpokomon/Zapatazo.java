@@ -1,6 +1,7 @@
 package chimpokomon;
 
 public class Zapatazo extends Ataque{
+    // Esta mal usado chimpokomonAtacante, ya lo cambie.
     @Override
     public void dañar(Chimpokomon chinpokomon, Chimpokomon chimpokomonAtacante) {
         double random = Math.random();
@@ -9,7 +10,7 @@ public class Zapatazo extends Ataque{
             chinpokomon.restarVida(1);;
         }
         else {
-            System.out.println(chinpokomon.nombre + " Realizo un ataque critico");
+            System.out.println(chimpokomonAtacante.nombre + " Realizo un ataque veloz");
             chinpokomon.restarVida(2);;
         }
 
