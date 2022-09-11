@@ -7,6 +7,7 @@ import chimpokomon.CañonConico;
 import chimpokomon.Gallotronix;
 import chimpokomon.GarraMecanica;
 import chimpokomon.GimnasioChimpokomon;
+import chimpokomon.PomadaWassington;
 import chimpokomon.RayoVeloz;
 import chimpokomon.Zapatazo;
 import chimpokomon.Zapato;
@@ -29,6 +30,8 @@ public class Main {
        
         //Tercer chinpokomon
         Zapato zapato = new Zapato(List.of(new Zapatazo()));
+        Zapato zapato5 = new Zapato(List.of(new Zapatazo(), new PomadaWassington()));
+        zapato5.setNombre("zapatoSuperSaiyan");
 
         // No dejaba asignarle la pelea, le agregue el public static y anda.
         //Si los pones a pelear te queda el ultimo resultado, quizas podriamos realizar
@@ -36,6 +39,6 @@ public class Main {
         //Carnotron le queda 5 de vida."
         
         // GimnasioChimpokomon.peleaChinpokomonDe_Con_(carnotron, gallotronix);
-        GimnasioChimpokomon.peleaChinpokomonDe_Con_(gallotronix,carnotron );
+        GimnasioChimpokomon.peleaChinpokomonDe_Con_(zapato,zapato5 );
     }
 }
