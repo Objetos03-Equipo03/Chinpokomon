@@ -40,5 +40,8 @@ public class Main {
         
         // GimnasioChimpokomon.peleaChinpokomonDe_Con_(carnotron, gallotronix);
         GimnasioChimpokomon.peleaChinpokomonDe_Con_(zapato,zapato5 );
+
+
+        
     }
 }
