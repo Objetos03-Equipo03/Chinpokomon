@@ -6,8 +6,18 @@ public abstract class Chimpokomon implements IChimpokomon{
     protected String nombre;
     protected Integer nivelDeVida;
     protected List<Ataque> ataques;
+    Number naturaleza = 0;
+    String[] tipoDeNat = new String[] { "ChimpokomonSinNaturaleza", "Animal", "Cosa", "Robot" };
+    public String getNaturaleza() {
+        return this.tipoDeNat[naturaleza.intValue()];
+    }
 
-    public Chimpokomon(List<Ataque> ataques) {
+    public void setNaturaleza(Number naturaleza) {
+        this.naturaleza = naturaleza;
+    }
+
+    public Chimpokomon(List<Ataque> ataques, Number naturaleza) {
+        this.naturaleza = naturaleza;
         this.ataques = ataques;
     }
 
