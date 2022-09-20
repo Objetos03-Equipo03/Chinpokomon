@@ -1,10 +1,12 @@
 package chimpokomon;
 
+import Ataque.Ataque;
+
 import java.util.List;
 
-public abstract class Chimpokomon implements IChimpokomon{
+public abstract class Chimpokomon implements IChimpokomon {
     protected String nombre;
-    protected Integer nivelDeVida;
+    public Integer nivelDeVida;
     protected List<Ataque> ataques;
 
     public Chimpokomon(List<Ataque> ataques) {
@@ -37,6 +39,8 @@ public abstract class Chimpokomon implements IChimpokomon{
 
     public Boolean estaDerrotado() {
         if(this.nivelDeVida <=0){
+            //LoggerAux.info(this.getNombre() + " ya no puede continuar.\n");
+
             System.out.printf(this.getNombre() + " ya no puede continuar.\n");
         }
         return this.nivelDeVida <= 0;
@@ -44,7 +48,8 @@ public abstract class Chimpokomon implements IChimpokomon{
 
     public void restarVida(int vida){
         this.nivelDeVida -= vida;
-        System.out.printf(this.getNombre()+" le queda " + this.getNivelDeVida() +" de vida.\n");
+        System.out.println(this.getNombre()+" le queda " + this.getNivelDeVida() +" de vida.\n");
+
     }
 
     public void pelearContra(Chimpokomon chinpokomon) {

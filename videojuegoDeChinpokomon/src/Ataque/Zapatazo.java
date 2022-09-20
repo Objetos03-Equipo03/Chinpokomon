@@ -1,6 +1,9 @@
-package chimpokomon;
+package Ataque;
 
-public class Zapatazo extends Ataque{
+import Ataque.Ataque;
+import chimpokomon.Chimpokomon;
+
+public class Zapatazo extends Ataque {
     @Override
     public void dañar(Chimpokomon chinpokomon, Chimpokomon chimpokomonAtacante) {
         double random = Math.random();
@@ -9,7 +12,7 @@ public class Zapatazo extends Ataque{
             chinpokomon.restarVida(1);;
         }
         else {
-            System.out.println(chinpokomon.nombre + " Realizo un ataque critico");
+            System.out.println(chinpokomon.getNombre() + " Realizo un ataque critico");
             chinpokomon.restarVida(2);;
         }
 

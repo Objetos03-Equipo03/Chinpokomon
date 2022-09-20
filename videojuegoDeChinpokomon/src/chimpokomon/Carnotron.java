@@ -1,6 +1,7 @@
 package chimpokomon;
 
-import java.util.ArrayList;
+import Ataque.Ataque;
+
 import java.util.List;
 
 public class Carnotron extends Chimpokomon{
