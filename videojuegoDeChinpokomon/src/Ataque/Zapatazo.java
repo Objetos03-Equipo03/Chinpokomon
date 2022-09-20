@@ -1,6 +1,4 @@
 package Ataque;
-
-import Ataque.Ataque;
 import chimpokomon.Chimpokomon;
 
 public class Zapatazo extends Ataque {
