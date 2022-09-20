@@ -52,7 +52,7 @@ public class GimnasioChimpokomon {
         ataque2.add(new Zapatazo());
         ataque2.add(new PomadaWassington());
 
-        GimnasioChimpokomon gimnasioChimpokomon = new GimnasioChimpokomon(new Zapato(ataque2), new Zapato(ataque1));
+        GimnasioChimpokomon gimnasioChimpokomon = new GimnasioChimpokomon(new Zapato(ataque2,3), new Zapato(ataque1,1));
 
         gimnasioChimpokomon.peleaChinpokomonDe_Con_();
 

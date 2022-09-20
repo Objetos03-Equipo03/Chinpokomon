@@ -4,12 +4,15 @@ import Ataque.Ataque;
 
 import java.util.List;
 
-public class Gallotronix extends Chimpokomon{
+//crear objeto con los datos de la naturaleza
 
-    public Gallotronix(List<Ataque> ataques) {
-        super(ataques);
+public class Gallotronix extends Chimpokomon {
+
+    public Gallotronix(List<Ataque> ataques, Number naturaleza) {
+        super(ataques, naturaleza);
         setNombre("Gallotronix");
         setNivelDeVida(25);
 
     }
+
 }

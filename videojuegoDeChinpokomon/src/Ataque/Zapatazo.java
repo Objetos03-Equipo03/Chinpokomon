@@ -12,7 +12,7 @@ public class Zapatazo extends Ataque {
             chinpokomon.restarVida(1);;
         }
         else {
-            System.out.println(chinpokomon.getNombre() + " Realizo un ataque critico");
+            System.out.println(chimpokomonAtacante.getNombre() + " Realizo un ataque veloz");
             chinpokomon.restarVida(2);;
         }
 
