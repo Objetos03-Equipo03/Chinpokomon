@@ -1,4 +1,4 @@
-from ChimpokomonPython.chimpokomon.Chimpokomon import Chimpokomon
+from Chimpokomon import Chimpokomon
 
 
 class Gallotronix(Chimpokomon):

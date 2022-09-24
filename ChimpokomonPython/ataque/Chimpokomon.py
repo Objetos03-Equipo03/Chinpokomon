@@ -1,7 +1,6 @@
+##from IChimpokomon import AChimpokomon
 
-from ChimpokomonPython.chimpokomon.IChimpokomon import AChimpokomon
-
-class Chimpokomon(AChimpokomon):
+class Chimpokomon():
 
     def __init__(self, naturaleza, ataque):
         self.nombre = None

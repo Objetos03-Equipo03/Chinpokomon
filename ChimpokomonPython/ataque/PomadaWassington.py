@@ -1,5 +1,5 @@
 from Ataque import Ataque
-from chimpokomon.Chimpokomon import Chimpokomon
+from Chimpokomon import Chimpokomon
 import random
 
 

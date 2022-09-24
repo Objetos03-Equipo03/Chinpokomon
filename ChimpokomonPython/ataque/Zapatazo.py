@@ -1,7 +1,6 @@
-from chimpokomon.Chimpokomon import Chimpokomon
-import random
 from Ataque import Ataque
-
+from Chimpokomon import Chimpokomon
+import random
 
 class Zapatazo(Ataque):
     def dañar(self,  chinpokomon: Chimpokomon, chimpokomonAtacante: Chimpokomon):

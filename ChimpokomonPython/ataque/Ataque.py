@@ -1,9 +1,5 @@
-from ChimpokomonPython.chimpokomon.Chimpokomon import Chimpokomon
-
-from IAtaque import IAtaque
-
-
-class Ataque(IAtaque):
+from IAtaque import IInterface
+class Ataque(IInterface):
     def __init__(self, nombre, daño):
         self._nombre = nombre
         self._daño = daño

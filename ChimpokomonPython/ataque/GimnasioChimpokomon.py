@@ -1,6 +1,8 @@
-from ChimpokomonPython.chimpokomon.Zapato import Zapato
-import ChimpokomonPython.logger.LoggerAux as LoggerAux
-import ChimpokomonPython.ataque.Ataque as Ataque
+import Zapatazo as Zapatazo
+import PomadaWassington as PomadaWassington
+import Zapato as Zapato
+import LoggerAux as LOGGER
+import Ataque as Ataque
 
 class GimnasioChimpokomon():
 
@@ -8,16 +10,16 @@ class GimnasioChimpokomon():
         self.chimpokomonA = chimpokomonA
         self.chimpokomonB = chimpokomonB
         
-    log1 = LoggerAux()
+    log1 = LOGGER.LoggerAux()
 
     def peleaChimpokomones(self, chimpokomonA, chimpokomonB):
         while not chimpokomonA.estaDerrotado() and not chimpokomonB.estaDerrotado():
             chimpokomonA.pelearContra(chimpokomonB)
             chimpokomonB.pelearContra(chimpokomonA)
         if chimpokomonB.estaDerrotado():
-             LoggerAux.info("El chimpokomon " + chimpokomonA.getNombre() + " ha ganado")
+             LOGGER.LoggerAux.setInfo("El chimpokomon " + chimpokomonA.getNombre() + " ha ganado")
         else:
-            LoggerAux.info("El chimpokomon " + chimpokomonB.getNombre() + " ha ganado")
+            LOGGER.LoggerAux.setInfo("El chimpokomon " + chimpokomonB.getNombre() + " ha ganado")
 
     def main(self):
         ataque1 = [Ataque()]
@@ -29,6 +31,9 @@ class GimnasioChimpokomon():
 
         gimnasio = GimnasioChimpokomon(Zapato(3, ataque1), Zapato(1, ataque2))
 
+        
         gimnasio.peleaChimpokomones()
 
-        print(gimnasio.log1.debug())
+        print(gimnasio.log1._info)
+
+        

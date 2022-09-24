@@ -1,7 +1,7 @@
-from ChimpokomonPython.chimpokomon.Chimpokomon import Chimpokomon
+from Chimpokomon import Chimpokomon
 from abc import ABC, abstractmethod
 
-class IInterface(object):
+class IInterface(ABC):
     @abstractmethod
     def dañar(self, chinpokomon: Chimpokomon, ChipokomonAtacante: Chimpokomon):
         pass

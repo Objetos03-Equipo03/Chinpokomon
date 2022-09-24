@@ -1,9 +1,4 @@
 
-from distutils.log import debug, info, warn
-from enum import Enum
-from tokenize import String
-
-
 def singleton(cls):
 
     instances = dict()
@@ -70,9 +65,4 @@ class LoggerAux():
     def setError(self, error):
         self._error = error
 
-
-log1 = LoggerAux()
-
-
-log1.setDebug("Hola")
-print(log1.debug())
+LOGGER = LoggerAux()
