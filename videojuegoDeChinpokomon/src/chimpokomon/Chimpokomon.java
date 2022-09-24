@@ -1,13 +1,13 @@
 package chimpokomon;
 
-import Ataque.Ataque;
+import Ataque.IAtaque;
 
 import java.util.List;
 
 public abstract class Chimpokomon implements IChimpokomon {
     protected String nombre;
     public Integer nivelDeVida;
-    protected List<Ataque> ataques;
+    protected List<IAtaque> ataques;
     Number naturaleza = 0;
     String[] tipoDeNat = new String[] { "ChimpokomonSinNaturaleza", "Animal", "Cosa", "Robot" };
     public String getNaturaleza() {
@@ -18,7 +18,7 @@ public abstract class Chimpokomon implements IChimpokomon {
         this.naturaleza = naturaleza;
     }
 
-    public Chimpokomon(List<Ataque> ataques, Number naturaleza) {
+    public Chimpokomon(List<IAtaque> ataques, Number naturaleza) {
         this.naturaleza = naturaleza;
         this.ataques = ataques;
     }
@@ -35,11 +35,11 @@ public abstract class Chimpokomon implements IChimpokomon {
         return nivelDeVida;
     }
 
-    public List<Ataque> getAtaques() {
+    public List<IAtaque> getAtaques() {
         return ataques;
     }
 
-    public void setAtaques(List<Ataque> ataques) {
+    public void setAtaques(List<IAtaque> ataques) {
         this.ataques = ataques;
     }
 

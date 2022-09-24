@@ -7,7 +7,7 @@ public final class Logger {
     private static Level level;
 
     public Logger(Level level) {
-        this.level = level;
+        Logger.level = level;
     }
 
     public static Logger getInstance(Level level){
@@ -18,7 +18,7 @@ public final class Logger {
     }
 
     public void setLevel(Level level){
-        this.level = level;
+        Logger.level = level;
     }
 
     public Level getLevel() {

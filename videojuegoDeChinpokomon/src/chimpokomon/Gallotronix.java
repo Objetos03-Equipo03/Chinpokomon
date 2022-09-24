@@ -1,6 +1,6 @@
 package chimpokomon;
 
-import Ataque.Ataque;
+import Ataque.IAtaque;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Gallotronix extends Chimpokomon {
 
-    public Gallotronix(List<Ataque> ataques, Number naturaleza) {
+    public Gallotronix(List<IAtaque> ataques, Number naturaleza) {
         super(ataques, naturaleza);
         setNombre("Gallotronix");
         setNivelDeVida(25);

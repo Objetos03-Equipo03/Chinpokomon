@@ -1,6 +1,6 @@
 package chimpokomon;
 
-import Ataque.Ataque;
+import Ataque.IAtaque;
 import Ataque.Zapatazo;
 import Ataque.PomadaWassington;
 import logger.*;
@@ -30,13 +30,13 @@ public class GimnasioChimpokomon {
             //System.out.printf("El ganador es "+ chinpokomonA.getNombre(),"\n");
             LoggerAux.info("El ganador es: "+ chinpokomonA.getNombre());
             LoggerAux.error("Este es un mensaje de error");
-            logger.info("El ganador es: "+ chinpokomonA.getNombre());
+            // logger.info("El ganador es: "+ chinpokomonA.getNombre());
 
         }
         else{
             //System.out.printf("El ganador es "+ chinpokomonB.getNombre(),"\n");
-            //LoggerAux.info("El ganador es: "+ chinpokomonB.getNombre());
-            logger.info("El ganador es: "+ chinpokomonB.getNombre());
+            LoggerAux.info("El ganador es: "+ chinpokomonB.getNombre());
+            // logger.info("El ganador es: "+ chinpokomonB.getNombre());
             //LoggerAux.error("Este es un mensaje de error");
             //System.out.printf(logger.getInfo());
 
@@ -45,8 +45,8 @@ public class GimnasioChimpokomon {
 
     public static void main(String[] args) {
 
-        List<Ataque> ataque1 = new ArrayList<Ataque>();
-        List<Ataque> ataque2 = new ArrayList<Ataque>();
+        List<IAtaque> ataque1 = new ArrayList<IAtaque>();
+        List<IAtaque> ataque2 = new ArrayList<IAtaque>();
 
         ataque1.add(new Zapatazo());
         ataque2.add(new Zapatazo());
