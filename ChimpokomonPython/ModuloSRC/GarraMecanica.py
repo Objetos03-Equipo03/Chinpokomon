@@ -11,7 +11,7 @@ class GarraMecanica(Ataque):
         if chinpokomon.getNaturaleza() == "Animal" and chimpokomonAtacante.getNaturaleza() == "Robot" or chinpokomon.getNaturaleza() == "Cosa" and chimpokomonAtacante.getNaturaleza() == "Animal" or chinpokomon.getNaturaleza() == "Robot" and chimpokomonAtacante.getNaturaleza() == "Cosa":
             if ram < 0.5:
                 chinpokomon.restarVida(
-                    (chimpokomon.getNivelDeVida() * 0.5) + 2)
+                    (chinpokomon.getNivelDeVida() * 0.5) + 2)
                 print(chimpokomonAtacante.getNombre() +
                       " Realizo un ataque critico")
             else:

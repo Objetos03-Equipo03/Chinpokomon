@@ -1,6 +1,9 @@
 ##from IChimpokomon import AChimpokomon
 
-class Chimpokomon():
+from ChimpokomonPython.ModuloSRC.Ataque import Ataque
+
+
+class Chimpokomon(Ataque):
 
     def __init__(self, naturaleza, ataque):
         self.nombre = None
