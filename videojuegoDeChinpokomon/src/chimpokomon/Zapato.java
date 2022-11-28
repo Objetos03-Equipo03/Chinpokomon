@@ -1,14 +1,15 @@
-package chimpokomon;
-import Ataque.IAtaque;
+package Chimpokomon;
 
-import java.util.List;
+
+import java.util.ArrayList;
 
 public class Zapato extends Chimpokomon {
-
-    public Zapato(List<IAtaque> ataques, int Naturaleza) {
-        super(ataques, Naturaleza);
+    ArrayList<AtaqueAbstract> ataques = new ArrayList<AtaqueAbstract>();
+    public Zapato() {
+        ataques.add(Ataque.Zapatazo());
+        setAtaques(ataques);
         setNombre("Zapato");
-        setNivelDeVida(30);
+        setNivelVida(30);
 
     }
 }

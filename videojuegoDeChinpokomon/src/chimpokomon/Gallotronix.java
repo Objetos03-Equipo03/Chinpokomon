@@ -1,18 +1,14 @@
-package chimpokomon;
+package Chimpokomon;
 
-import Ataque.IAtaque;
-
-import java.util.List;
-
-//crear objeto con los datos de la naturaleza
+import java.util.ArrayList;
 
 public class Gallotronix extends Chimpokomon {
-
-    public Gallotronix(List<IAtaque> ataques, Number naturaleza) {
-        super(ataques, naturaleza);
+    ArrayList<AtaqueAbstract> ataques = new ArrayList<AtaqueAbstract>();
+    public Gallotronix() {
+        ataques.add(Ataque.GarraMecanica());
+        setAtaques(ataques);
         setNombre("Gallotronix");
-        setNivelDeVida(25);
+        setNivelVida(25);
 
     }
-
 }

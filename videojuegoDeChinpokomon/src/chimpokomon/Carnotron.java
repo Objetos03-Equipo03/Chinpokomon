@@ -1,15 +1,17 @@
-package chimpokomon;
-import Ataque.IAtaque;
+package Chimpokomon;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class Carnotron extends Chimpokomon{
+public class Carnotron extends Chimpokomon {
 
-    public Carnotron(List<IAtaque> ataques , Number naturaleza) {
-        super(ataques , naturaleza);
+    ArrayList<AtaqueAbstract> ataques = new ArrayList<AtaqueAbstract>();
+    
+    public Carnotron() {
+        ataques.add(Ataque.RayoVeloz());
+        ataques.add(Ataque.CanhonSonico());
+        this.setAtaques(ataques);
         this.setNombre("Carnotron");
-        this.setNivelDeVida(20);
+        this.setNivelVida(20);
     }
-
 
 }
