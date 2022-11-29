@@ -1,24 +1,24 @@
-package chimpokomon;
+package Chimpokomon;
 
-import Ataque.IAtaque;
-
+import Naturaleza.Naturaleza;
 import java.util.List;
+import Ataque.Ataque;
 
-public abstract class Chimpokomon implements IChimpokomon {
+public abstract class Chimpokomon {
     protected String nombre;
     public Integer nivelDeVida;
-    protected List<IAtaque> ataques;
-    Number naturaleza = 0;
-    String[] tipoDeNat = new String[] { "ChimpokomonSinNaturaleza", "Animal", "Cosa", "Robot" };
-    public String getNaturaleza() {
-        return this.tipoDeNat[naturaleza.intValue()];
+    protected List<Ataque> ataques;
+    public Naturaleza naturaleza;
+
+    public Naturaleza getNaturaleza() {
+        return naturaleza;
     }
 
-    public void setNaturaleza(Number naturaleza) {
-        this.naturaleza = naturaleza;
-    }
+    // public void setNaturaleza(Number naturaleza) {
+    // this.naturaleza = naturaleza;
+    // }
 
-    public Chimpokomon(List<IAtaque> ataques, Number naturaleza) {
+    public Chimpokomon(List<Ataque> ataques, Naturaleza naturaleza) {
         this.naturaleza = naturaleza;
         this.ataques = ataques;
     }
@@ -35,11 +35,11 @@ public abstract class Chimpokomon implements IChimpokomon {
         return nivelDeVida;
     }
 
-    public List<IAtaque> getAtaques() {
+    public List<Ataque> getAtaques() {
         return ataques;
     }
 
-    public void setAtaques(List<IAtaque> ataques) {
+    public void setAtaques(List<Ataque> ataques) {
         this.ataques = ataques;
     }
 
@@ -47,25 +47,31 @@ public abstract class Chimpokomon implements IChimpokomon {
         this.nivelDeVida = nivelDeVida;
     }
 
+    public boolean tieneVentajaSobre(Chimpokomon chipo) {
+        return this.getNaturaleza() == Naturaleza.robot && chipo.getNaturaleza() == Naturaleza.animal ||
+                this.getNaturaleza() == Naturaleza.animal && chipo.getNaturaleza() == Naturaleza.cosa ||
+                this.getNaturaleza() == Naturaleza.cosa && chipo.getNaturaleza() == Naturaleza.robot;
+    }
+
     public Boolean estaDerrotado() {
-        if(this.nivelDeVida <=0){
-            //LoggerAux.info(this.getNombre() + " ya no puede continuar.\n");
+        if (this.nivelDeVida <= 0) {
+            // LoggerAux.info(this.getNombre() + " ya no puede continuar.\n");
 
             System.out.printf(this.getNombre() + " ya no puede continuar.\n");
         }
         return this.nivelDeVida <= 0;
     }
 
-    public void restarVida(int vida){
+    public void restarVida(int vida) {
         this.nivelDeVida -= vida;
-        System.out.println(this.getNombre()+" le queda " + this.getNivelDeVida() +" de vida.\n");
+        System.out.println(this.getNombre() + " le queda " + this.getNivelDeVida() + " de vida.\n");
 
     }
 
     public void pelearContra(Chimpokomon chinpokomon) {
         for (int i = 0; i < this.ataques.size(); i++) {
 
-            this.ataques.get(i).dañar(chinpokomon, this );
+            this.ataques.get(i).dañar(chinpokomon, this);
         }
     }
 
