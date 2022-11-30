@@ -5,10 +5,9 @@ from ChimpokomonPython.ModuloSRC.Ataque import Ataque
 
 class Chimpokomon(Ataque):
 
-    def __init__(self, nombre, vida, nivel, naturaleza, ataques):
+    def __init__(self, nombre, nivelDeVida, naturaleza, ataques):
         self._nombre = nombre
-        self._vida = vida
-        self._nivel = nivel
+        self._nivelDeVida = nivelDeVida
         self._naturaleza = naturaleza
         self._ataques = ataques
         
@@ -21,20 +20,12 @@ class Chimpokomon(Ataque):
         self._nombre = nombre
 
     @property
-    def vida(self):
-        return self._vida
+    def nivelDeVida(self):
+        return self._nivelDeVida
 
-    @vida.setter
-    def vida(self, vida):
-        self._vida = vida
-    
-    @property
-    def nivel(self):
-        return self._nivel
-
-    @nivel.setter
-    def nivel(self, nivel):
-        self._nivel = nivel
+    @nivelDeVida.setter
+    def nivelDeVida(self, nivelDeVida):
+        self._nivelDeVida = nivelDeVida
 
     @property
     def naturaleza(self):
@@ -54,16 +45,22 @@ class Chimpokomon(Ataque):
 
     def estaDerrotado(self):
         if self.nivelVida <= 0:
-            print("El Chimpokomon " + self.getNombre + " ha sido derrotado")
+            print("El chimpokomon " + self.getNombre + " ha sido derrotado")
         return self.nivelVida <= 0
 
     def restarVida(self, vida):
         self.nivelVida -= vida
-        print("El Chimpokomon " + self.getNombre + " le queda " + str(self.nivelVida) + " de vida")
+        print("El chimpokomon " + self.getNombre + " le queda " + str(self.nivelVida) + " de vida")
 
-    def pelearContra(self, Chimpokomon):
+    def pelearContra(self, chimpokomon):
         for  i in i < len(self.ataques):
-            self.ataques[i].dañar(Chimpokomon, self)
+            self.ataques[i].dañar(chimpokomon, self)
+
+    def tieneVentajaSobre(self, chimpokomon):
+        return(self.naturaleza == chimpokomon.naturaleza.ROBOT and chimpokomon.naturaleza == chimpokomon.naturaleza.ANIMAL or
+        self.naturaleza == chimpokomon.naturaleza.ANIMAL and chimpokomon.naturaleza == chimpokomon.naturaleza.COSA or
+        self.naturaleza == chimpokomon.naturaleza.COSA and chimpokomon.naturaleza == chimpokomon.naturaleza.ROBOT)
             
+    
 
 

@@ -3,13 +3,20 @@ import random
 
 class GarraMecanica(Ataque):
     def __init__(self):
-            Ataque.__init__(self, "Garra Mecanica", 2, 2)
+            Ataque.__init__(self, 2, "GarraMecanica")
 
-    def dañar(self,  chinpokomon, poder):
-        ram = random.randint(1, 10)
+    def dañar(self,  chimpokomonAtacante, chimpokomonEnemigo):
+        ram = random.randint(0, 1)
     
-        if ram == 1:
-            chinpokomon.restarVida(chinpokomon.getNivelDeVida() * 0.5)
+        if (chimpokomonAtacante.tieneVentajaSobre(chimpokomonEnemigo)):
+            if (ram < 0.5):
+                chimpokomonEnemigo.restarVida(chimpokomonEnemigo.nivelDeVida() * 0.5)
+            else: 
+                chimpokomonEnemigo.restarVida(self.dañoValor() + 2)
         else:        
-            chinpokomon.restarVida(poder)
+            if (ram < 0.1):
+                chimpokomonEnemigo.restarVida(chimpokomonEnemigo.nivelDeVida() * 0.5)
+                # logger.info(chipoAtacante.getNombre() + " Realizo un ataque critico");
+            else:
+                chimpokomonEnemigo.restarVida(self.dañoValor())
       

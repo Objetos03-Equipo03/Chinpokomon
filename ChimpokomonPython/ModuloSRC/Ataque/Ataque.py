@@ -1,9 +1,8 @@
 from abc import ABC, abstractmethod
 class Ataque():
-    def __init__(self, nombre, poder, puntoExtra):
+    def __init__(self, dañoValor, nombre):
+        self._dañoValor = dañoValor
         self._nombre = nombre
-        self._poder = poder
-        self._puntoExtra = puntoExtra
 
     @property
     def nombre(self):
@@ -14,28 +13,14 @@ class Ataque():
         self.nombre = nombre
 
     @property
-    def poder(self):
-      return self._poder
+    def dañoValor(self):
+      return self._dañoValor
 
-    @poder.setter
-    def poder(self, poder):
-        self._poder = poder
-
-    @property
-    def puntoExtra(self):
-      return self._puntoExtra
-
-    @puntoExtra.setter
-    def puntoExtra(self, puntoExtra):
-        self._puntoExtra = puntoExtra
-
-    def atacar(self, Chimpokomon):
-        if(Chimpokomon.atacante.tieneVentaja(Chimpokomon)):
-            self.dañar(Chimpokomon, self.poder + self.puntoExtra)
-        else:
-            self.dañar(Chimpokomon, self.poder)
+    @dañoValor.setter
+    def dañoValor(self, dañoValor):
+        self._dañoValor = dañoValor
 
     @abstractmethod
-    def dañar(self, Chimpokomon, poder):
+    def dañar(self, chimpokomonAtacante, chimpokomonEnemigo):
         pass
     
