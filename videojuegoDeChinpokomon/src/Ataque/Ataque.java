@@ -29,14 +29,7 @@ public abstract class Ataque {
 
 
 
-    public abstract void dañar(Chimpokomon chinpokomon,Chimpokomon chinpokomon2 ) ;
-        // if(chipo.getOponente().tieneVentajaSobre(chipo)) {
-        //     this.atacar(chipo, this.getdañoValor() + this.getdañoValorExtra());
-        // } else {
-        //     this.atacar(chipo, this.getdañoValor());
-        // }
-    
-
-    // public abstract void atacar(Chimpokomon chipo, Integer dañoValor);
+    public abstract void dañar(Chimpokomon chimpoAtacante,Chimpokomon chimpoEnemigo ) ;
+      
 
 }

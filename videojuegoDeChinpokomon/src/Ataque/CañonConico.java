@@ -10,15 +10,15 @@ public class CañonConico extends Ataque {
     }
 
     @Override
-    public void dañar(Chimpokomon chipoAtacante, Chimpokomon chipoAtacado) {
-        if (chipoAtacante.tieneVentajaSobre(chipoAtacado)) {
-            chipoAtacado.restarVida(5);
+    public void dañar(Chimpokomon chipoAtacante, Chimpokomon chimpoEnemigo) {
+        if (chipoAtacante.tieneVentajaSobre(chimpoEnemigo)) {
+            chimpoEnemigo.restarVida(5);
             // System.out.printf(chimpokomonAtacante.getNombre() + " es un robot y " +
             // chinpokomon.getNombre()
             // + " es un animal, por lo tanto " + chinpokomon.getNombre() + " recibe 5
             // puntos de daño.\n");
         } else {
-            chipoAtacado.restarVida(4);
+            chimpoEnemigo.restarVida(4);
         }
 
     }
