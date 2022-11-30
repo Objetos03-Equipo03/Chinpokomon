@@ -14,10 +14,11 @@ public class Chimpokomon {
         return naturaleza;
     }
 
-    public Chimpokomon(List<Ataque> ataques, Naturaleza naturaleza, String nombre) {
+    public Chimpokomon(List<Ataque> ataques, Naturaleza naturaleza, String nombre, Integer nivelDeVida) {
         this.naturaleza = naturaleza;
         this.ataques = ataques;
         this.nombre = nombre;
+        this.nivelDeVida = nivelDeVida;
     }
 
     public String getNombre() {
@@ -58,9 +59,9 @@ public class Chimpokomon {
         this.nivelDeVida -= vida;
     }
 
-    public void pelearContra(Chimpokomon chinpokomon) {
+    public void pelearContra(Chimpokomon chimpoEnemigo) {
         for (int i = 0; i < this.ataques.size(); i++) {
-            this.ataques.get(i).dañar(chinpokomon, this);
+            this.ataques.get(i).dañar(this, chimpoEnemigo);
         }
     }
 

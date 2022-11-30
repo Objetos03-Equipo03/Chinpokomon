@@ -1,11 +1,12 @@
 package Ataque;
 
 import Chimpokomon.Chimpokomon;
+import logger.Logger;
 
 
 public class Zapatazo extends Ataque {
     
-
+    public static Logger logger = Logger.getInstance();
     public Zapatazo(Integer dañoValor, String nombre) {
         super(dañoValor, nombre);
         
@@ -19,7 +20,7 @@ public class Zapatazo extends Ataque {
                 chipoEnemigo.restarVida(4);
                 ;
             } else {
-                System.out.println(chipoAtacante.getNombre() + " Realizo un ataque veloz");
+                logger.info(chipoAtacante.getNombre() + " Realizo un ataque veloz");
                 chipoEnemigo.restarVida(5);
                 ;
             }
@@ -28,7 +29,7 @@ public class Zapatazo extends Ataque {
                 chipoEnemigo.restarVida(1);
                 ;
             } else {
-                System.out.println(chipoAtacante.getNombre() + " Realizo un ataque veloz");
+                logger.info(chipoAtacante.getNombre() + " Realizo un ataque veloz");
                 chipoEnemigo.restarVida(2);
                 ;
             }

@@ -15,12 +15,10 @@ public class RayoVeloz extends Ataque {
 
         if (chipoAtacante.tieneVentajaSobre(chipoEnemigo)) {
             chipoEnemigo.restarVida(4);
-            // System.out.println(chipoAtacante.getNombre() + " Hizo 4 puntos de daño a " +
-            // chipoEnemigo.getNombre());
+
         } else {
             chipoEnemigo.restarVida(3);
-            // System.out.println(chipoAtacante.getNombre() + " Hizo 3 puntos de daño a " +
-            // chipoEnemigo.getNombre());
+
         }
     }
 

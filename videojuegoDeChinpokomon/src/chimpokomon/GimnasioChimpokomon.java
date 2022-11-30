@@ -1,14 +1,15 @@
 package Chimpokomon;
 
-import Ataque.Ataque;
+import Ataque.*;
 import Naturaleza.Naturaleza;
 import logger.*;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import static Chimpokomon.ChimpokomonFactory.Zapato;
 import static Chimpokomon.ChimpokomonFactory.ZapatoConDosAtaques;
+import static Chimpokomon.ChimpokomonFactory.Carnotron;
+import static Chimpokomon.ChimpokomonFactory.Gallotronix;
 
 public class GimnasioChimpokomon {
 
@@ -26,14 +27,14 @@ public class GimnasioChimpokomon {
         while(!this.chinpokomonA.estaDerrotado() && !this.chinpokomonB.estaDerrotado()){
 
             chinpokomonA.pelearContra(chinpokomonB);
-            logger.info(chinpokomonA.getNombre() + " su vida es: " + chinpokomonA.getNivelDeVida());
-            logger.info(chinpokomonB.getNombre() + " su vida es: " + chinpokomonB.getNivelDeVida());
+            logger.info("La vida de "+chinpokomonA.getNombre() + " es: " + chinpokomonA.getNivelDeVida());
+            logger.info("La vida de "+chinpokomonB.getNombre() + " es: " + chinpokomonB.getNivelDeVida());
             if(!this.chinpokomonA.estaDerrotado() && !this.chinpokomonB.estaDerrotado()){
                 chinpokomonB.pelearContra(chinpokomonA);
             }
         }
-        logger.info(chinpokomonA.getNombre() + " su vida es: " + chinpokomonA.getNivelDeVida());
-        logger.info(chinpokomonB.getNombre() + " su vida es: " + chinpokomonB.getNivelDeVida());
+        logger.info("La vida de "+chinpokomonA.getNombre() + " es: " + chinpokomonA.getNivelDeVida());
+        logger.info("La vida de "+chinpokomonB.getNombre() + " es: " + chinpokomonB.getNivelDeVida());
         logger.info("Tenemos un ganador!");
         if(chinpokomonB.estaDerrotado()){
             logger.info("El ganador es: "+ chinpokomonA.getNombre());
@@ -45,7 +46,8 @@ public class GimnasioChimpokomon {
 
     public static void main(String[] args) {
 
-        GimnasioChimpokomon gimnasioChimpokomon = new GimnasioChimpokomon(Zapato(Naturaleza.cosa), ZapatoConDosAtaques(Naturaleza.cosa));
+        // GimnasioChimpokomon gimnasioChimpokomon = new GimnasioChimpokomon(Zapato(Naturaleza.robot), ZapatoConDosAtaques(Naturaleza.animal));
+        GimnasioChimpokomon gimnasioChimpokomon = new GimnasioChimpokomon(Carnotron(Naturaleza.robot), Gallotronix(Naturaleza.animal));
 
         gimnasioChimpokomon.peleaChinpokomones();
 
