@@ -1,9 +1,5 @@
-##from IChimpokomon import AChimpokomon
 
-from ChimpokomonPython.ModuloSRC.Ataque import Ataque
-
-
-class Chimpokomon(Ataque):
+class Chimpokomon():
 
     def __init__(self, nombre, nivelDeVida, naturaleza, ataques):
         self._nombre = nombre
@@ -44,17 +40,14 @@ class Chimpokomon(Ataque):
         self._ataques = ataques
 
     def estaDerrotado(self):
-        if self.nivelVida <= 0:
-            print("El chimpokomon " + self.getNombre + " ha sido derrotado")
-        return self.nivelVida <= 0
+        return self.nivelDeVida <= 0
 
     def restarVida(self, vida):
-        self.nivelVida -= vida
-        print("El chimpokomon " + self.getNombre + " le queda " + str(self.nivelVida) + " de vida")
+        self.nivelDeVida(self.nivelDeVida - vida)
 
-    def pelearContra(self, chimpokomon):
+    def pelearContra(self, chimpokomonEnemigo):
         for  i in i < len(self.ataques):
-            self.ataques[i].dañar(chimpokomon, self)
+            self.ataques[i].dañar(self, chimpokomonEnemigo)
 
     def tieneVentajaSobre(self, chimpokomon):
         return(self.naturaleza == chimpokomon.naturaleza.ROBOT and chimpokomon.naturaleza == chimpokomon.naturaleza.ANIMAL or
