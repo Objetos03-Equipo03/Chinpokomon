@@ -4,7 +4,7 @@ import Naturaleza.Naturaleza;
 import java.util.List;
 import Ataque.Ataque;
 
-public abstract class Chimpokomon {
+public class Chimpokomon {
     protected String nombre;
     public Integer nivelDeVida;
     protected List<Ataque> ataques;
@@ -14,13 +14,10 @@ public abstract class Chimpokomon {
         return naturaleza;
     }
 
-    // public void setNaturaleza(Number naturaleza) {
-    // this.naturaleza = naturaleza;
-    // }
-
-    public Chimpokomon(List<Ataque> ataques, Naturaleza naturaleza) {
+    public Chimpokomon(List<Ataque> ataques, Naturaleza naturaleza, String nombre) {
         this.naturaleza = naturaleza;
         this.ataques = ataques;
+        this.nombre = nombre;
     }
 
     public String getNombre() {
