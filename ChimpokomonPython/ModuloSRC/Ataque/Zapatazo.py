@@ -1,10 +1,9 @@
-from Ataque import Ataque
-from Chimpokomon import Chimpokomon
+import Ataque
 import random
 
 class Zapatazo(Ataque):
     def __init__(self):
-            Ataque.__init__(self, 1 , "Zapatazo")
+        Ataque.__init__(self, 1, "Zapatazo")
 
     def dañar(self, chimpokomonAtacante, chimpokomonEnemigo):
         ram = random.randint(0, 1)

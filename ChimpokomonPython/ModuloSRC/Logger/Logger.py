@@ -1,4 +1,4 @@
-from model.Logger.Level import Nivel
+from ModuloSRC.Logger.Level import Nivel
 
 
 class Logger():
