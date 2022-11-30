@@ -12,28 +12,28 @@ public class Zapatazo extends Ataque {
     }
 
     @Override
-    public void dañar(Chimpokomon chinpokomon, Chimpokomon chimpokomonAtacante) {
-        // double random = Math.random();
-        // if (Naturaleza.tieneVentaja(chinpokomon, chimpokomonAtacante)) {
-        //     if (random < 0.5) {
-        //         chinpokomon.restarVida(4);
-        //         ;
-        //     } else {
-        //         System.out.println(chimpokomonAtacante.getNombre() + " Realizo un ataque veloz");
-        //         chinpokomon.restarVida(5);
-        //         ;
-        //     }
-        // } else {
-        //     if (random < 0.5) {
-        //         chinpokomon.restarVida(1);
-        //         ;
-        //     } else {
-        //         System.out.println(chimpokomonAtacante.getNombre() + " Realizo un ataque veloz");
-        //         chinpokomon.restarVida(2);
-        //         ;
-        //     }
+    public void dañar(Chimpokomon chipoAtacante, Chimpokomon chipoEnemigo) {
+        double random = Math.random();
+        if (chipoAtacante.tieneVentajaSobre(chipoEnemigo)) {
+            if (random < 0.5) {
+                chipoEnemigo.restarVida(4);
+                ;
+            } else {
+                System.out.println(chipoAtacante.getNombre() + " Realizo un ataque veloz");
+                chipoEnemigo.restarVida(5);
+                ;
+            }
+        } else {
+            if (random < 0.5) {
+                chipoEnemigo.restarVida(1);
+                ;
+            } else {
+                System.out.println(chipoAtacante.getNombre() + " Realizo un ataque veloz");
+                chipoEnemigo.restarVida(2);
+                ;
+            }
 
-        // }
+        }
 
     }
 
