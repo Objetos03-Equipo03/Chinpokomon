@@ -7,7 +7,7 @@ class AChimpokomon(ABC):
         pass
     
     @abstractmethod
-    def pelearContra(self, chimpokomon):
+    def pelearContra(self, Chimpokomon):
         pass
 
 

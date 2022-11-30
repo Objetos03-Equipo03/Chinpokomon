@@ -1,4 +1,4 @@
-from chimpokomon import Chimpokomon
+from Chimpokomon import Chimpokomon
 
 
 class Carnotron(Chimpokomon):

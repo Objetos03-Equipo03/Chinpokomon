@@ -22,10 +22,10 @@ class GimnasioChimpokomon():
             chimpokomonB.pelearContra(chimpokomonA)
         if chimpokomonB.estaDerrotado():
             LOGGER.LoggerAux.setInfo(
-                "El chimpokomon " + chimpokomonA.getNombre() + " ha ganado")
+                "El Chimpokomon " + chimpokomonA.getNombre() + " ha ganado")
         else:
             LOGGER.LoggerAux.setInfo(
-                "El chimpokomon " + chimpokomonB.getNombre() + " ha ganado")
+                "El Chimpokomon " + chimpokomonB.getNombre() + " ha ganado")
 
 
 class main():
@@ -49,10 +49,10 @@ class main():
 if __name__ == "__main__":
         print("Bienvenido al gimnasio de Chimpokomon")
       
-        chimpokomon = Zapato(3, Zapatazo())
+        Chimpokomon = Zapato(3, Zapatazo())
         chimpokomon2 = Gallotronix(3, GarraMecanica())
 
-        gimnasio = GimnasioChimpokomon(chimpokomon,chimpokomon2)
+        gimnasio = GimnasioChimpokomon(Chimpokomon,chimpokomon2)
 
         gimnasio.peleaChimpokomones()
 

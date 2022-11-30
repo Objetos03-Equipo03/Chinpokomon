@@ -1,17 +1,20 @@
 package Chimpokomon;
 
 import Ataque.Ataque;
+import Naturaleza.Naturaleza;
 import logger.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static Chimpokomon.ChimpokomonFactory.Zapato;
+import static Chimpokomon.ChimpokomonFactory.ZapatoConDosAtaques;
+
 public class GimnasioChimpokomon {
 
     protected Chimpokomon chinpokomonA;
     protected Chimpokomon chinpokomonB;
-    //Logger logger = Logger.getInstance(new Debug());
-    LoggerAux logger = LoggerAux.getInstance("debug");
+    public static Logger logger = Logger.getInstance();
 
     public GimnasioChimpokomon(Chimpokomon chinpokomonA, Chimpokomon chinpokomonB) {
         this.chinpokomonA = chinpokomonA;
@@ -19,44 +22,36 @@ public class GimnasioChimpokomon {
 
     }
 
-    public void peleaChinpokomonDe_Con_(){
+    public void peleaChinpokomones(){
         while(!this.chinpokomonA.estaDerrotado() && !this.chinpokomonB.estaDerrotado()){
-            chinpokomonA.pelearContra(chinpokomonB);
-            chinpokomonB.pelearContra(chinpokomonA);
-        }
-        if(chinpokomonB.estaDerrotado()){
-            //System.out.printf("El ganador es "+ chinpokomonA.getNombre(),"\n");
-            LoggerAux.info("El ganador es: "+ chinpokomonA.getNombre());
-            LoggerAux.error("Este es un mensaje de error");
-            // logger.info("El ganador es: "+ chinpokomonA.getNombre());
 
+            chinpokomonA.pelearContra(chinpokomonB);
+            logger.info(chinpokomonA.getNombre() + " su vida es: " + chinpokomonA.getNivelDeVida());
+            logger.info(chinpokomonB.getNombre() + " su vida es: " + chinpokomonB.getNivelDeVida());
+            if(!this.chinpokomonA.estaDerrotado() && !this.chinpokomonB.estaDerrotado()){
+                chinpokomonB.pelearContra(chinpokomonA);
+            }
+        }
+        logger.info(chinpokomonA.getNombre() + " su vida es: " + chinpokomonA.getNivelDeVida());
+        logger.info(chinpokomonB.getNombre() + " su vida es: " + chinpokomonB.getNivelDeVida());
+        logger.info("Tenemos un ganador!");
+        if(chinpokomonB.estaDerrotado()){
+            logger.info("El ganador es: "+ chinpokomonA.getNombre());
         }
         else{
-            //System.out.printf("El ganador es "+ chinpokomonB.getNombre(),"\n");
-            LoggerAux.info("El ganador es: "+ chinpokomonB.getNombre());
-            // logger.info("El ganador es: "+ chinpokomonB.getNombre());
-            //LoggerAux.error("Este es un mensaje de error");
-            //System.out.printf(logger.getInfo());
-
+            logger.info("El ganador es: "+ chinpokomonB.getNombre());
         }
     }
 
     public static void main(String[] args) {
 
-        List<Ataque> ataque1 = new ArrayList<Ataque>();
-        List<Ataque> ataque2 = new ArrayList<Ataque>();
+        GimnasioChimpokomon gimnasioChimpokomon = new GimnasioChimpokomon(Zapato(Naturaleza.cosa), ZapatoConDosAtaques(Naturaleza.cosa));
 
-        // ataque1.add(new Zapatazo());
-        // ataque2.add(new Zapatazo());
-        // ataque2.add(new PomadaWassington());
+        gimnasioChimpokomon.peleaChinpokomones();
 
-        // GimnasioChimpokomon gimnasioChimpokomon = new GimnasioChimpokomon(new Zapato(ataque2,3), new Zapato(ataque1,1));
 
-        // gimnasioChimpokomon.peleaChinpokomonDe_Con_();
 
-        //gimnasioChimpokomon.logger.setLevel(new Warn());
 
-        // System.out.println(gimnasioChimpokomon.logger.getDebug());
 
 
 

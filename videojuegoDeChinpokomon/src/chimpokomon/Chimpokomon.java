@@ -51,23 +51,15 @@ public class Chimpokomon {
     }
 
     public Boolean estaDerrotado() {
-        if (this.nivelDeVida <= 0) {
-            // LoggerAux.info(this.getNombre() + " ya no puede continuar.\n");
-
-            System.out.printf(this.getNombre() + " ya no puede continuar.\n");
-        }
-        return this.nivelDeVida <= 0;
+        return this.getNivelDeVida() <= 0;
     }
 
     public void restarVida(int vida) {
         this.nivelDeVida -= vida;
-        System.out.println(this.getNombre() + " le queda " + this.getNivelDeVida() + " de vida.\n");
-
     }
 
     public void pelearContra(Chimpokomon chinpokomon) {
         for (int i = 0; i < this.ataques.size(); i++) {
-
             this.ataques.get(i).dañar(chinpokomon, this);
         }
     }
