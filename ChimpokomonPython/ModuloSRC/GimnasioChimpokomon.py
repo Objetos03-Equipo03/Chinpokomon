@@ -1,5 +1,5 @@
 from Chimpokomons.ChimpokomonFactory import ChimpokomonFactory
-from Logger.Level import Nivel
+from Logger.Level import Level
 from Logger.Logger import Logger
 from Naturaleza.Naturaleza import Naturalezas
 
@@ -10,21 +10,22 @@ class GimnasioChimpokomon():
         self.chimpokomonEnemigo = chimpokomonEnemigo
 
 
-    Logger.instance(Nivel.INFO)
+    Logger.instance(Level.INFO)
 
     def peleaChimpokomones(self):
         while not self.chimpokomonAtacante.estaDerrotado() and not self.chimpokomonEnemigo.estaDerrotado():
             self.chimpokomonAtacante.pelearContra(self.chimpokomonEnemigo)
+            Logger.instance().info('La vida de ' + str(self.chimpokomonAtacante.nombre) + ' es ' + str(self.chimpokomonAtacante.nivelDeVida))
             self.chimpokomonEnemigo.pelearContra(self.chimpokomonAtacante)
+            Logger.instance().info('La vida de ' + str(self.chimpokomonEnemigo.nombre) + ' es ' + str(self.chimpokomonEnemigo.nivelDeVida))
         if self.chimpokomonEnemigo.estaDerrotado():
-            Logger.instance().info(str(self.chimpokomonAtacante) + ' Es el ganador')
+            Logger.instance().info(str(self.chimpokomonAtacante.nombre) + ' Es el ganador')
         else:
-            Logger.instance().info(str(self.chimpokomonEnemigo) + ' Es el ganador')
+            Logger.instance().info(str(self.chimpokomonEnemigo.nombre) + ' Es el ganador')
 
-Logger.instance(Nivel.INFO)
+Logger.instance(Level.INFO)
 batallar = GimnasioChimpokomon(ChimpokomonFactory.Zapato(Naturalezas.COSA), ChimpokomonFactory.ZapatoConDosAtaques(Naturalezas.COSA))
 batallar.peleaChimpokomones()
-
         
 
 

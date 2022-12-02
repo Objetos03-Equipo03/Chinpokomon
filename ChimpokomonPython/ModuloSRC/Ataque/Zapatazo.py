@@ -1,4 +1,4 @@
-import Ataque
+from Ataque.Ataque import Ataque
 import random
 
 class Zapatazo(Ataque):

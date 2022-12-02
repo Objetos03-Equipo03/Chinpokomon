@@ -1,5 +1,4 @@
-from ModuloSRC.Logger.Level import Nivel
-
+from Logger.Level import Level
 
 class Logger():
     
@@ -9,7 +8,7 @@ class Logger():
         None
     
     @classmethod
-    def instance(cls, level=Nivel.DEBUG):
+    def instance(cls, level=Level.DEBUG):
         if cls._instance is None:
             cls._instance = cls.__new__(cls)
             cls._level = level
@@ -27,13 +26,13 @@ class Logger():
         print("DEBUG: " + respuesta)
 
     def info(self, respuesta):
-        if(self.nivel != Nivel.DEBUG):
+        if(self.level != Level.DEBUG):
             print("INFO: " + respuesta)
 
     def warn(self, respuesta):
-        if( self.nivel != Nivel.DEBUG or self.nivel == Nivel.INFO):
+        if( self.level != Level.DEBUG or self.level == Level.INFO):
             print("WARN: " + respuesta)
 
     def error(self, respuesta):
-        if( self.nivel == Nivel.ERROR):
+        if( self.level == Level.ERROR):
             print("ERROR: " + respuesta)

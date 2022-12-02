@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Nivel(Enum):
+class Level(Enum):
     DEBUG = 1
     INFO = 2
     WARN = 3

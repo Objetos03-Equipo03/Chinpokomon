@@ -6,7 +6,7 @@ class PomadaWassington(Ataque):
 
     def dañar(self, chimpokomonAtacante, chimpokomonEnemigo):
         if(chimpokomonAtacante.tieneVentajaSobre(chimpokomonEnemigo)):
-            chimpokomonAtacante.nivelDeVida(chimpokomonAtacante.nivelDeVida + 6)
+            chimpokomonAtacante.nivelDeVida += 6
         else:
-            chimpokomonAtacante.nivelDeVida(chimpokomonAtacante.nivelDeVida + 5)
+            chimpokomonAtacante.nivelDeVida += 5
 

@@ -1,8 +1,8 @@
-from Ataque import Ataque
+from Ataque.Ataque import Ataque
 
 class RayoVeloz(Ataque):
-    # def __init__(self):
-    #         Ataque.__init__(self, 3, "RayoVeloz")
+    def __init__(self):
+        Ataque.__init__(self, 3, "RayoVeloz")
 
     def dañar(self, chimpokomonAtacante, chimpokomonEnemigo):
         if(chimpokomonAtacante.tieneVentajaSobre(chimpokomonEnemigo)):

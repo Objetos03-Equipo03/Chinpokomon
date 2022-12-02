@@ -35,7 +35,7 @@ class Chimpokomon():
     def ataques(self):
         return self._ataques
 
-    @naturaleza.setter
+    @ataques.setter
     def ataques(self, ataques):
         self._ataques = ataques
 
@@ -43,10 +43,10 @@ class Chimpokomon():
         return self.nivelDeVida <= 0
 
     def restarVida(self, vida):
-        self.nivelDeVida(self.nivelDeVida - vida)
+        self.nivelDeVida -= vida
 
     def pelearContra(self, chimpokomonEnemigo):
-        for  i in i < len(self.ataques):
+        for i in range(len(self.ataques)):
             self.ataques[i].dañar(self, chimpokomonEnemigo)
 
     def tieneVentajaSobre(self, chimpokomon):

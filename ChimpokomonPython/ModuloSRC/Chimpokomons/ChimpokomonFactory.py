@@ -10,25 +10,26 @@ class ChimpokomonFactory():
     @staticmethod
     def Carnotron(naturaleza):
         ataques = []
-        ataques.append(CañonConico( 4, "CañonConico"))
-        ataques.append(RayoVeloz( 3, "RayoVeloz"))
+        ataques.append(CañonConico())
+        ataques.append(RayoVeloz())
         return Chimpokomon("Carnotron", 20, naturaleza, ataques)
 
     @staticmethod
     def Gallotronix(naturaleza):
         ataques = []
-        ataques.append(GarraMecanica(2, "GarraMecanica"))
+        ataques.append(GarraMecanica())
         return Chimpokomon("Gallotronix", 25, naturaleza, ataques)
 
     @staticmethod
     def Zapato(naturaleza):
+        print(naturaleza)
         ataques = []
-        ataques.append(Zapatazo( 1, "Zapatazo"))
+        ataques.append(Zapatazo())
         return Chimpokomon("Zapato", 30, naturaleza, ataques)
 
     @staticmethod
     def ZapatoConDosAtaques(naturaleza):
         ataques = []
-        ataques.append(Zapatazo( 1, "Zapatazo"))
-        ataques.append(PomadaWassington(0, "PomadaWassington"))
+        ataques.append(Zapatazo())
+        ataques.append(PomadaWassington())
         return Chimpokomon("ZapatoConDosAtaques", 30, naturaleza, ataques)
