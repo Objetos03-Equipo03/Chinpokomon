@@ -1,10 +1,15 @@
 package logger;
 
-public abstract class Level {
+public enum Level {
+    ERROR(5),
+    WARN(4),
+    INFO(4),
+    DEBUG(4);
 
+    public final int level;
 
-    public abstract void debug(String message);
-    public abstract void info(String message);
-    public abstract void warn(String message);
-    public abstract void error(String message);
+    private Level(int level) {
+        this.level = level;
+    }
+
 }

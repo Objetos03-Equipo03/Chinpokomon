@@ -1,19 +1,25 @@
 package Ataque;
-import chimpokomon.Chimpokomon;
-import chimpokomon.Naturaleza;
 
-public class RayoVeloz extends Naturaleza implements IAtaque {
+import Chimpokomon.Chimpokomon;
+
+public class RayoVeloz extends Ataque {
+
+    public RayoVeloz(Integer dañoValor, String nombre) {
+        super(dañoValor, nombre);
+        dañoValor = 3;
+        nombre = "RayoVeloz";
+    }
 
     @Override
-    public void dañar(Chimpokomon chinpokomon, Chimpokomon chimpokomonAtacante) {
+    public void dañar(Chimpokomon chipoAtacante, Chimpokomon chipoEnemigo) {
 
-        if (Naturaleza.tieneVentaja(chinpokomon, chimpokomonAtacante)) {
-            chinpokomon.restarVida(4);
-            System.out.println(chimpokomonAtacante.getNombre() + " Hizo 4 puntos de daño a " + chinpokomon.getNombre());
-        }
-        else {
-            chinpokomon.restarVida(3);
-            System.out.println(chimpokomonAtacante.getNombre() + " Hizo 3 puntos de daño a " + chinpokomon.getNombre());
+        if (chipoAtacante.tieneVentajaSobre(chipoEnemigo)) {
+            chipoEnemigo.restarVida(4);
+
+        } else {
+            chipoEnemigo.restarVida(3);
+
         }
     }
+
 }

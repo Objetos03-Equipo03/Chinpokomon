@@ -1,59 +1,41 @@
-from ChimpokomonPython.ModuloSRC.Chimpokomon import Chimpokomon
-from ChimpokomonPython.ModuloSRC.Gallotronix import Gallotronix
-from ChimpokomonPython.ModuloSRC.GarraMecanica import *
-import Zapatazo as Zapatazo
-import PomadaWassington as PomadaWassington
-import Zapato as Zapato
-import LoggerAux as LOGGER
-import Ataque as Ataque
-
+from Chimpokomons.ChimpokomonFactory import ChimpokomonFactory
+from Logger.Level import Level
+from Logger.Logger import Logger
+from Naturaleza.Naturaleza import Naturalezas
 
 class GimnasioChimpokomon():
 
-    def __init__(self, chimpokomonA, chimpokomonB):
-        self.chimpokomonA = chimpokomonA
-        self.chimpokomonB = chimpokomonB
+    def __init__(self, chimpokomonAtacante, chimpokomonEnemigo):
+        self.chimpokomonAtacante = chimpokomonAtacante
+        self.chimpokomonEnemigo = chimpokomonEnemigo
 
-    log1 = LOGGER.LoggerAux()
 
-    def peleaChimpokomones(self, chimpokomonA, chimpokomonB):
-        while not chimpokomonA.estaDerrotado() and not chimpokomonB.estaDerrotado():
-            chimpokomonA.pelearContra(chimpokomonB)
-            chimpokomonB.pelearContra(chimpokomonA)
-        if chimpokomonB.estaDerrotado():
-            LOGGER.LoggerAux.setInfo(
-                "El chimpokomon " + chimpokomonA.getNombre() + " ha ganado")
+    Logger.instance(Level.INFO)
+
+    def peleaChimpokomones(self):
+        while not self.chimpokomonAtacante.estaDerrotado() and not self.chimpokomonEnemigo.estaDerrotado():
+            self.chimpokomonAtacante.pelearContra(self.chimpokomonEnemigo)
+            Logger.instance().info('La vida de ' + str(self.chimpokomonAtacante.nombre) + ' es ' + str(self.chimpokomonAtacante.nivelDeVida))
+            self.chimpokomonEnemigo.pelearContra(self.chimpokomonAtacante)
+            Logger.instance().info('La vida de ' + str(self.chimpokomonEnemigo.nombre) + ' es ' + str(self.chimpokomonEnemigo.nivelDeVida))
+        if self.chimpokomonEnemigo.estaDerrotado():
+            Logger.instance().info(str(self.chimpokomonAtacante.nombre) + ' Es el ganador')
         else:
-            LOGGER.LoggerAux.setInfo(
-                "El chimpokomon " + chimpokomonB.getNombre() + " ha ganado")
+            Logger.instance().info(str(self.chimpokomonEnemigo.nombre) + ' Es el ganador')
 
-
-class main():
-    def main(self):
-        print("Bienvenido al gimnasio de Chimpokomon")
-        ataque1 = [Ataque()]
-        ataque2 = [Ataque()]
-
-        ataque1.insert(Zapatazo())
-        ataque2.insert(Zapatazo())
-        ataque2.insert(PomadaWassington())
-
-        gimnasio = GimnasioChimpokomon(Zapato(3, ataque1), Zapato(1, ataque2))
-
-        gimnasio.peleaChimpokomones()
-
-        print(gimnasio.log1._info)
+Logger.instance(Level.INFO)
+batallar = GimnasioChimpokomon(ChimpokomonFactory.Zapato(Naturalezas.COSA), ChimpokomonFactory.ZapatoConDosAtaques(Naturalezas.COSA))
+batallar.peleaChimpokomones()
+        
 
 
 
-if __name__ == "__main__":
-        print("Bienvenido al gimnasio de Chimpokomon")
+# if __name__ == "__main__":
+#         print("Bienvenido al gimnasio de Chimpokomon")
       
-        chimpokomon = Zapato(3, Zapatazo())
-        chimpokomon2 = Gallotronix(3, GarraMecanica())
 
-        gimnasio = GimnasioChimpokomon(chimpokomon,chimpokomon2)
+#         gimnasio = GimnasioChimpokomon(ChimpokomonFactory.Zapato(Naturalezas.COSA), ChimpokomonFactory.ZapatoConDosAtaques(Naturalezas.COSA))
 
-        gimnasio.peleaChimpokomones()
+#         gimnasio.peleaChimpokomones()
 
-        print(gimnasio.log1._info)
+#         print(gimnasio.log1._info)

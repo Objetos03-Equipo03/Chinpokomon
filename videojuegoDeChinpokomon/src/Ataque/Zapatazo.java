@@ -1,32 +1,42 @@
 package Ataque;
 
-import chimpokomon.Chimpokomon;
-import chimpokomon.Naturaleza;
+import Chimpokomon.Chimpokomon;
+import logger.Logger;
 
-public class Zapatazo extends Naturaleza implements IAtaque {
+
+public class Zapatazo extends Ataque {
+    
+    public static Logger logger = Logger.getInstance();
+    public Zapatazo(Integer dañoValor, String nombre) {
+        super(dañoValor, nombre);
+        
+    }
+
     @Override
-    public void dañar(Chimpokomon chinpokomon, Chimpokomon chimpokomonAtacante) {
+    public void dañar(Chimpokomon chipoAtacante, Chimpokomon chipoEnemigo) {
         double random = Math.random();
-        if (Naturaleza.tieneVentaja(chinpokomon, chimpokomonAtacante)) {
+        if (chipoAtacante.tieneVentajaSobre(chipoEnemigo)) {
             if (random < 0.5) {
-                chinpokomon.restarVida(4);
+                chipoEnemigo.restarVida(4);
                 ;
             } else {
-                System.out.println(chimpokomonAtacante.getNombre() + " Realizo un ataque veloz");
-                chinpokomon.restarVida(5);
+                logger.info(chipoAtacante.getNombre() + " Realizo un ataque veloz");
+                chipoEnemigo.restarVida(5);
                 ;
             }
         } else {
             if (random < 0.5) {
-                chinpokomon.restarVida(1);
+                chipoEnemigo.restarVida(1);
                 ;
             } else {
-                System.out.println(chimpokomonAtacante.getNombre() + " Realizo un ataque veloz");
-                chinpokomon.restarVida(2);
+                logger.info(chipoAtacante.getNombre() + " Realizo un ataque veloz");
+                chipoEnemigo.restarVida(2);
                 ;
             }
 
         }
 
     }
+
+   
 }

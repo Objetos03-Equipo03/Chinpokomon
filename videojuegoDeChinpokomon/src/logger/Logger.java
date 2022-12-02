@@ -1,43 +1,52 @@
 package logger;
 
-public final class Logger {
+public class Logger {
 
     private static Logger instance;
 
-    private static Level level;
+    private static Level levelDefault = Level.DEBUG;
 
-    public Logger(Level level) {
-        Logger.level = level;
+    public static void setLevel(Level level){
+        Logger.levelDefault = level;
     }
 
-    public static Logger getInstance(Level level){
+    public static Logger getInstance(){
         if (instance == null) {
-            instance = new Logger(level);
+            instance = new Logger(levelDefault);
         }
         return instance;
     }
 
-    public void setLevel(Level level){
-        Logger.level = level;
+    private Level level;
+
+    public void setLogLevel(Level level) {
+        this.level = level;
     }
 
-    public Level getLevel() {
-        return level;
+    private Logger(Level level){
+        this.level = level;
     }
 
     public void debug(String message) {
-        level.debug(message);
+        this.printMessage(level.DEBUG, message);
     }
 
     public void info(String message) {
-        level.info(message);
+        this.printMessage(level.INFO, message);;
     }
 
     public void warn(String message) {
-        level.warn(message);
+        this.printMessage(level.WARN, message);;
     }
 
     public void error(String message) {
-        level.error(message);
+        this.printMessage(level.ERROR, message);;
     }
+
+    public void printMessage(Level level, String msg) {
+        if (this.level.level <= level.level) {
+            System.out.println(msg);
+        }
+    }
+
 }
